@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock, Stopwatch & Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Digital Clock (Default Visible) -->
+        <div id="clockScreen" class="screen active">
+            <h1>Digital Clock</h1>
+            <div id="clock" class="glass">00:00:00</div>
+            <div class="analog-clock glass">
+                <div class="hand hour" id="hourHand"></div>
+                <div class="hand minute" id="minuteHand"></div>
+                <div class="hand second" id="secondHand"></div>
+                <div class="center-dot"></div>
+            </div>
+        </div>
+
+        <!-- Stopwatch (Hidden Initially) -->
+        <div id="stopwatchScreen" class="screen">
+            <h1>Stopwatch</h1>
+            <div id="stopwatch" class="glass">00:00:00</div>
+            <div class="analog-clock glass">
+                <div class="hand second" id="stopwatchHand"></div>
+                <div class="center-dot"></div>
+            </div>
+            <div class="buttonAlign">
+            <button onclick="startStopwatch()">▶</button>
+            <button onclick="pauseStopwatch()">⏸</button>
+            <button onclick="resetStopwatch()">🔄</button>
+        </div>
+        </div>
+
+        <!-- Timer (Hidden Initially) -->
+        <div id="timerScreen" class="screen">
+            <h1>Timer</h1>
+            <input type="number" id="timerInput" placeholder="Enter seconds">
+            <div id="timer" class="glass">00:00:00</div>
+            <div class="analog-clock glass">
+                <div class="hand second" id="timerHand"></div>
+                <div class="center-dot"></div>
+            </div>
+            <div class="buttonAlign">
+            <button onclick="startTimer()">▶</button>
+            <button onclick="pauseTimer()">⏸</button>
+            <button onclick="resetTimer()">🔄</button>
+        </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="nav">
+            <button onclick="showScreen('clockScreen')">🕒</button>
+            <button onclick="showScreen('stopwatchScreen')">⏱</button>
+            <button onclick="showScreen('timerScreen')">⏳</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
